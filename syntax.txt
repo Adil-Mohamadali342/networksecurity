@@ -1,0 +1,239 @@
+'''
+- [ ] Machine learning
+
+
+ 1. conda create -p venv python==3.13.9 
+
+ 2. conda activate venv/
+
+ 3. pip install -r requirements.txt
+ 
+ 4. python test.py
+
+ 5. pip install ipykernel
+
+ 6. !pip install pandas   ;  in the Jupyter code
+
+ 7. deactivate
+
+ 8. \  ; line break
+
+ 9. x=7;y=87;z=9
+
+
+- [ ] To create an environment:
+
+
+Anaconda:
+
+ 1. conda create -p venv python==3.13.9 
+
+ 2. conda activate venv/
+
+
+Python:
+
+1. python -m venv myenv
+
+1. myenv\Scripts\activate 
+
+
+Linux:
+
+1. pip install virtualenv
+
+  2. virtualenv -p python3 virtual_env
+
+3. virtual_env\Scripts\activate
+
+
+----------------------------------------------------------------
+
+Anaconda:
+
+ 1. conda create -p venv python==3.13.9 
+
+ 2. conda activate venv/
+
+ ---------------------------------------------------------------
+
+Feature engineering:
+
+1. null values
+2. duplicate values
+3. improvising
+4. Labelencoding
+5. independent and dependent variables
+6. Onehotencoding and column tranformer
+7. model training
+
+------------------------------------------------------------------
+
+
+Docker commands:
+
+1. docker
+2. docker -v
+3. docker images
+4. docker ps
+5. docker run -d -p 80:80 docker/getting-started
+6. docker stop <container_id>
+7. docker image rm <image_id>
+8. docker image rm -f <image_id>
+9. docker run hello-world
+10. docker build -t <name> .
+11. docker stop <imageid>
+12. docker login
+13. docker tag <username>/welcome-app <username>/welcome-app1
+14. docker push <username>/welcome-app1:latest
+15. docker compose up
+16. docker compose stop
+
+---------------------------------------------------------------------------------
+
+docker images
+docker build -t studentperformance-app . 
+docker run -p 5000:5000 studentperformance-app
+docker tag studentperformance-app adilmohamadali/studentperformance-app:latest
+docker push adilmohamadali/studentperformance-app:latest
+
+GIT commands:
+
+-------------------------------------------------------------------------
+
+3. git config --global user.name "adil"
+4. git config --global user.email "adil@gmail.com"
+2. git init
+6. git add .
+7. git commit -m "hi"
+10. git remote add origin <link_description>
+12. git push origin main
+13. git pull --no-rebase origin main
+
+
+-------------------------------------------------------------------------
+
+
+1. git -v  // git --version
+2. git init
+3. git config --global user.name "adil"
+4. git config --global user.email "adil@gmail.com"
+5. git status
+6. git add .
+7. git commit -m "hi"
+8. git branch
+9. git branch -M main
+10. git remote add origin <link_description>
+11. git remote -v  
+12. git push origin main
+13. git restore .
+14. git clone <link_green>.       from github to desktop folder 
+15. git restore --staged <filename>
+16. git reset <filename>.         just like restore
+17. git diff --staged.            info on whats added and not committed
+18. git branch <branchname>
+19. git checkout <branchname>
+20. git merge <branchname>
+21. git log
+22. git log -p -3
+23. git pull
+
+-------------------------------------------------------------------------------
+
+End to End Ml Project Implementation :
+
+1. create environment
+
+2. initialize git
+
+3. setup :
+
+      a. setup.py
+      b. requirements.txt
+      c. .gitignore 
+
+4. src :
+
+      a. __init__.py
+
+      b. components :
+            __init__.py
+            data_ingestion.py
+            data_transformation.py
+            model_trainer.py
+
+      c. pipeline :
+            __init__.py
+            train_pipeline.py
+            predict_pipeline.py       
+
+      d. logger.py
+         exception.py
+         utils.py   
+
+      extra folders:
+            cloud
+            entity
+            constant 
+
+      extra files:
+            .env
+
+
+5. notebook :
+
+      a. models.ipynb    
+
+      b. data :
+            input.csv       
+
+6. app.py 
+
+7. application.py
+
+9. deployment ecr :
+
+      1. dockerfile
+      2. .github/workflows/main.yaml. u can get it through github/actions/workflow/newworkflow
+      3. aws iam/users/create new user with permissions of amazonec2full and amazonec2containerregistryfull
+      4. generate credentials for access key
+      5. go to ecr and create repo and copy url 229128715590.dkr.ecr.ap-southeast-2.amazonaws.com/fstudentperformance
+      6. go to ec2 launch and input name and choose ubuntu and do all the rest things
+      7. instances/connect instance
+
+     sudo apt-get update
+     sudo apt-get upgrade -y
+     curl -fsSL https://get.docker.com -o get-docker.sh
+     sudo sh get-docker.sh
+     sudo usermod -aG docker ubuntu
+     newgrp docker
+
+     github/settings/actions/runners
+     do the things 
+     enter name of runner self-hosted
+     then go add secret keys in repository secret
+
+     #	Secret name	Value
+1	AWS_ACCESS_KEY_ID	
+2	AWS_SECRET_ACCESS_KEY	
+3	AWS_REGION	ap-southeast-2 
+4	ECR_REPOSITORY_NAME	
+5	AWS_ECR_LOGIN_URI
+
+instances/security/securitygroups/edit rules and there last one custom tcp and port 5001 
+in yaml 5001:5001 in docker run 5001:5000 in instance security port 5001
+
+10. deployment in beanstalk:
+
+python version 3.13
+and remember to access permissions
+name must be application.py and mostly remove -e . in requirements
+---------------------------------------------------------------------------------
+
+config :  All file paths
+artifacts : all data ingestion,validation etc output csv files
+data ingestion : read from mongodb, features, test_train_split  and os.makedirs and to_csv
+data validation : validate number of columns, drift comparison between test and train data, os.makedirs and to_csv
+
+'''
+
