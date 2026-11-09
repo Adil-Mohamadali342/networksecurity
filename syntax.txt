@@ -235,6 +235,7 @@ artifacts : all data ingestion,validation etc output csv, pickle files
 data ingestion : read from mongodb, features, test_train_split  and os.makedirs and to_csv
 data validation : validate number of columns, drift comparison between test and train data, os.makedirs and to_csv
 data transformation : preprocessor object using KNNImputer and Pipeline on independent,dependent values and numpyarr ,save_object
+model_trainer : numpy arr use it and pass to list of models,params -> select best model predict and best params, preprocessor and model pkl files as output
 
 '''
 
