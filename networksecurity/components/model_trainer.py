@@ -1,5 +1,6 @@
 import os
 import sys
+import dagshub
 
 from networksecurity.exception.exception import NetworkSecurityException 
 from networksecurity.logging.logger import logging
@@ -24,7 +25,7 @@ from sklearn.ensemble import (
     RandomForestClassifier,
 )
 import mlflow
-
+dagshub.init(repo_owner='Adil-Mohamadali342', repo_name='networksecurity', mlflow=True)
 
 class ModelTrainer:
     def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact:DataTransformationArtifact):
